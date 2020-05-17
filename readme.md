@@ -74,6 +74,13 @@ Scooby and the gang face their most challenging mystery ever: a plot to unleash 
 Is this it?(ENTER for yes/n for next)
 ```
 
+OPTIONAL :
+To disable debug loggings just add following line to `/automate/torrent.py`
+
+```python
+logging.disable(logging.CRITICAL)
+```
+
 ## Movie
 
 This script takes the title of movie or tv series you want to search on all of streaming platforms provided in the script `/automate/movie.py` .
