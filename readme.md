@@ -22,7 +22,6 @@ Clone the repository and checkout to stable commit
 ```
 git clone https://github.com/cannibalcheeseburger/automation-cli.git
 cd automation-cli
-git checkout <latest_version say: v0.0.x>
 ```
 ### Install Requirements
 
@@ -36,10 +35,18 @@ I would recommend doing it in a virtual environment .
 ```
 pip install --editable .
 ```
-</br>
+
+# Commands 
 
 ## Torrent
 
+This ultility searches for torrents in various sites to get the best torrent links.Script is at `/automate/torrent.py`
+
+<b>IMPORTANT</b>: Connecting to a VPN is recommended as most of the sites would be blocked(to enable sites which can be accessed with vpn use `-v` switch). Other than that most of these sites might contain some questionable ads/graphics .Use at your own descretion.
+
+USE : Just enter title of torrent to be searched along with options.
+
+Use `--help` option with command to get details about all other options.
 
 ```
 (env) D:\GITHUB\MERE WALE\automation-cli>torrent --help
