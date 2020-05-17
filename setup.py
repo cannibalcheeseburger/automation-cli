@@ -17,10 +17,11 @@ setup(
     include_package_data=True,
     install_requires=requirements,
 
-    entry_points='''
-        [console_scripts]
-        automate=automate:cli
-        ''' ,
+    entry_points={
+        'console_scripts':[
+        'movie=automate.movie:movie'
+        ]
+    },
 
     classifiers=[
         'License :: OSI Approved :: MIT License',

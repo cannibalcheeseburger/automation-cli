@@ -13,6 +13,8 @@ Might be useful (to me).
 
 ### Setup.py
 
+I would recommend doing it in a virtual environment .
+
 ```
 pip install --editable .
 ```
