@@ -72,6 +72,13 @@ Year: 2020
 PLOT:
 Scooby and the gang face their most challenging mystery ever: a plot to unleash the ghost dog Cerberus upon the world. As they race to stop this dogpocalypse, the gang discovers that Scooby has an epic destiny greater than anyone imagined.
 Is this it?(ENTER for yes/n for next)
+
+2020-05-18 05:21:15,703 - DEBUG - Opening browser tab for https://yst.am/movie/scoob!-2020
+2020-05-18 05:21:15,770 - DEBUG - Opening browser tab for https://1337x.to/search/Scoob! 2020/1/
+2020-05-18 05:21:15,863 - DEBUG - Opening browser tab for https://thepiratebay.org/search.php?q=Scoob! 2020
+2020-05-18 05:21:16,013 - DEBUG - Opening browser tab for https://torrentz2.eu/search?f=Scoob! 2020
+2020-05-18 05:21:16,118 - DEBUG - Opening browser tab for https://www.limetorrents.info/search/all/Scoob! 2020/
+2020-05-18 05:21:16,124 - DEBUG - End of script
 ```
 
 OPTIONAL :
