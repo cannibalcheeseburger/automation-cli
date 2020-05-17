@@ -19,7 +19,8 @@ setup(
 
     entry_points={
         'console_scripts':[
-        'movie=automate.movie:movie'
+        'movie=automate.movie:movie',
+        'torrent=automate.torrent:torrent'
         ]
     },
 
