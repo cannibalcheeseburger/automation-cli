@@ -11,6 +11,7 @@ Might be useful (to me).
 
 ## Commands
 
+ - [Torrent Finder](#Torrent)
  - [Movie/TV search](#Movie)
 
 ## Installation
@@ -34,6 +35,36 @@ python3 -m pip install --user -r requirements.txt
 I would recommend doing it in a virtual environment .
 ```
 pip install --editable .
+```
+</br>
+
+## Torrent
+
+
+```
+(env) D:\GITHUB\MERE WALE\automation-cli>torrent --help
+Usage: torrent [OPTIONS] [TITLE]...
+
+  Command line utility to find torrents
+
+Options:
+  -v, --vpn            Only use if you are using a vpn
+  -f, --force          Force to search the given title as is(imdb api will not   
+                       be refenced to correct title)
+
+  -t, --tv             To search only for tv series(skips searching yts.am       
+  -c, --count INTEGER  Restricts the number of tabs to given number
+  --help               Show this message and exit.
+```
+
+EXAMPLE :
+```
+(env) D:\GITHUB\MERE WALE\automation-cli>torrent -v -c 4  scoob
+Title: Scoob!
+Year: 2020
+PLOT:
+Scooby and the gang face their most challenging mystery ever: a plot to unleash the ghost dog Cerberus upon the world. As they race to stop this dogpocalypse, the gang discovers that Scooby has an epic destiny greater than anyone imagined.
+Is this it?(ENTER for yes/n for next)
 ```
 
 ## Movie
