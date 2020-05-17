@@ -1,5 +1,6 @@
 import setuptools
 from setuptools import setup
+from setuptools import setup, find_packages
 
 with open("README.md", 'r') as f:
     long_description = f.read()
@@ -8,7 +9,7 @@ with open('requirements.txt', 'r') as f:
 
 setup(
     name='automate',
-    version='1.0'
+    version='1.0',
     description='automation cli',
     author='Kashish srivastava',
     url="https://github.com/cannibalcheeseburger/automation-cli",

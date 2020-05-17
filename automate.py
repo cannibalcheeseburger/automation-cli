@@ -5,3 +5,4 @@ def cli():
        Usage:
             automate <name of task> <arguments>
    """
+   print("SUP")
