@@ -59,8 +59,8 @@ Usage: movie [OPTIONS] [TITLE]...
   Command line tool to automate some stuff
 
 Options:
-  -n, --netflix  Disable netflix
-  -p, --prime    Disable amazon prime
-  -h, --hotstar  Disable hotstar
+  -n, --nonetflix  Disable netflix
+  -p, --noprime    Disable amazon prime
+  -h, --nohotstar  Disable hotstar
   --help         Show this message and exit.
 ```
