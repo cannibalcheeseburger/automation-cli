@@ -16,11 +16,11 @@ def movie(title,nonetflix,noprime,nohotstar):
     prime = "https://www.primevideo.com/search/ref=atv_nb_sr?phrase=" + search +"&ie=UTF8"
     hotstar = "https://www.hotstar.com/in/search?q="+search+"&utm_source=gwa"
 
-    if nonetflix == True:
+    if nonetflix :
         webbrowser.open(netflix)
-    if noprime == True:
+    if noprime :
         webbrowser.open_new_tab(prime)
-    if nohotstar == True:
+    if nohotstar :
         webbrowser.open_new_tab(hotstar)
 
 
