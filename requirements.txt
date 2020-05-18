@@ -1,3 +1,4 @@
+-e git+https://github.com/cannibalcheeseburger/automation-cli.git@732fe0245b376774e7f8a0a464f4b9907aa6f80b#egg=automate
 certifi==2020.4.5.1
 chardet==3.0.4
 click==7.1.2
