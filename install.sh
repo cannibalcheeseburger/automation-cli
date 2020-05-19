@@ -1,2 +1,2 @@
-#!/usr/bin/bash
-python -m pip install --editable .
+#!/bin/bash
+pip install --editable .
