@@ -18,8 +18,8 @@ vpns=[
     ]
 novpns=[
         "https://boatairproxy.org/search.php?q=%s %s",
-        "https://tpbpiratez.org/search.php?q=%s %s",
-        "https://x1337x.se/%s %s/1/"
+     #   "https://tpbpiratez.org/search.php?q=%s %s",
+     #   "https://x1337x.se/%s %s/1/"
       # "https://proxyof.com/kickasstorrents-proxy-unblock/",
         #"https://piratebay-proxylist.net/?utm_source=expired&referral=thepiratetpb.eu"  #FOR LATER USE 
         ]
