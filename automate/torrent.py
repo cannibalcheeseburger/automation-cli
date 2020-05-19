@@ -3,6 +3,10 @@ import imdb
 import click
 import re
 import logging
+from selenium import webdriver
+import selenium
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import WebDriverWait
 
 logging.basicConfig(level=logging.DEBUG,format='%(asctime)s - %(levelname)s - %(message)s')
 
@@ -13,8 +17,11 @@ vpns=[
     "https://www.limetorrents.info/search/all/%s %s/",
     ]
 novpns=[
-        "https://proxyof.com/kickasstorrents-proxy-unblock/",
-        "https://piratebay-proxylist.net/?utm_source=expired&referral=thepiratetpb.eu"
+        "https://boatairproxy.org/search.php?q=%s %s",
+        "https://tpbpiratez.org/search.php?q=%s %s",
+        "https://x1337x.se/%s %s/1/"
+      # "https://proxyof.com/kickasstorrents-proxy-unblock/",
+        #"https://piratebay-proxylist.net/?utm_source=expired&referral=thepiratetpb.eu"  #FOR LATER USE 
         ]
 
 
@@ -68,7 +75,7 @@ def torrent(title,vpn,force,count,tv):
             webbrowser.open("https://eztv.io/search/"+title.replace(" ","-")+"-"+ep)  # searches eztv for series if vpn is connected
             logging.debug("Opening browser tab for %s " % ("https://eztv.io/search/"+title.replace(" ","-")+"-"+ep))
             counter = counter + 1
-
+    # vpn sites
     if vpn:  
         for url in vpns:   
             if counter < count:
@@ -79,14 +86,47 @@ def torrent(title,vpn,force,count,tv):
                     webbrowser.open(url % (title, year)) #seaches every link that needs vpn
                     logging.debug("Opening browser tab for %s " % url % (title, year))
                 counter = counter + 1
+   
+   
+   # non vpn sites
+    for url in novpns:
+        if counter < count:
+            if tv:
+                webbrowser.open(url % (title, ep)) #seaches every link that doesnt needs vpn
+                logging.debug("Opening browser tab for %s " % url % (title, ep))
+            else:
+                webbrowser.open(url % (title, year)) #seaches every link that doesnt needs vpn
+                logging.debug("Opening browser tab for %s " % url % (title, year))
+            counter = counter + 1
+
+    # kickass proxy 
+    logging.debug("OPENING KICKASS PROXY......")
+    browser1 = webdriver.Chrome("/media/cannibalcheeseburger/2C009EE8009EB872/GITHUB/MERE_WALE/automation-cli/webdriver/lin/chromedriver") #### CHANGE THIS FUCKING PATH TO YOUR NEED
+    browser1.get("https://proxyof.com/kickasstorrents-proxy-unblock/")
+    wait = WebDriverWait(browser1,600)
+    proxy9 = browser1.find_element_by_css_selector("#post-157 > div > strong > a:nth-child(3)")
+    proxy9.click()
+    input_box = browser1.find_element_by_id('contentSearch')
+    if tv:
+        input_box.send_keys(title+" "+ep+Keys.ENTER)
+        wait = WebDriverWait(browser1,400)
+        button = browser1.find_element_by_css_selector("#wrapperInner > div.mainpart > table > tbody > tr > td > div.tabs > ul > li:nth-child(4) > a")
     else:
-        pass
+        input_box.send_keys(title+" "+year+Keys.ENTER)
+        wait = WebDriverWait(browser1,400)
+        button = browser1.find_element_by_css_selector("#wrapperInner > div.mainpart > table > tbody > tr > td > div.tabs > ul > li:nth-child(2) > a")
+    wait = WebDriverWait(browser1,200)
+    button.click()
+    counter = counter+1
+
+    click.pause()
+
     logging.debug("End of script")
 
 #TODO
 """
-1. add non vpn sites.
-2. automate searching  using selenium
+## ADD MORE NON VPN SITES
+## AUTOMATE 'EM
 """
 
 if __name__ == "__main__":

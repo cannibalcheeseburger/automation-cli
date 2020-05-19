@@ -128,6 +128,9 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# vscode configs
+# vscode configs and environments
 .vscode
 lin-env
+
+#jupyter notebooks
+*.ipynb
