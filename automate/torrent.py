@@ -103,11 +103,10 @@ def torrent(title,vpn,force,count,tv):
 
     # kickass proxy 
     logging.debug("OPENING KICKASS PROXY......")
-    plat = sys.platform()
-    if plat == 'linux':
+    if sys.platform.startswith('linux'):
         browser1 = webdriver.Chrome("/media/cannibalcheeseburger/2C009EE8009EB872/GITHUB/MERE_WALE/automation-cli/webdriver/lin/chromedriver") #### CHANGE THIS FUCKING PATH TO YOUR NEED
     else:
-        browser1 = webdriver.Chrome("D:/GITHUB/MERE_WALE/automation-cli/webdriver/lin/chromedriver")
+        browser1 = webdriver.Chrome("D:/GITHUB/MERE_WALE/automation-cli/webdriver/win/chromedriver")
     browser1.get("https://proxyof.com/kickasstorrents-proxy-unblock/")
     wait = WebDriverWait(browser1,600)
     proxy9 = browser1.find_element_by_css_selector("#post-157 > div > strong > a:nth-child(3)")
