@@ -44,39 +44,43 @@ def torrent(title,vpn,force,count,tv):
     reg = re.compile(r's\d\de\d\d')
     ep = reg.search(title.lower())
     # checks if epsode details have been passed and assigns tv as true
-    if ep:
-        ep = ep.group()
-        tv = True
-        title = title.replace(ep,"")
-    else:
-        ep = ""
-    if not force:
-        
-        ia = imdb.IMDb()
-        movie_obj = ia.search_movie(title)
-        for mov in movie_obj:
-            el = ia.get_movie(mov.movieID)
-            title = el.get('title')
-            year = str(el.get('year'))
-            click.clear()
-            click.echo("Title: "+title)
-            click.echo("Year: "+year)
-            click.echo("PLOT:\n"+el.get('plot')[0])
-            choice = input("\nIs this it?(ENTER for yes/n for next)").lower()
-            if choice == 'n':
+    try:
+        if ep:
+            ep = ep.group()
+            tv = True
+            title = title.replace(ep,"")
+        else:
+            ep = ""
+            
+        if not force:
+            
+            ia = imdb.IMDb()
+            movie_obj = ia.search_movie(title)
+            for mov in movie_obj:
+                el = ia.get_movie(mov.movieID)
+                title = el.get('title')
+                year = str(el.get('year'))
                 click.clear()
-                continue
-            break    
-        
-        if not tv:
-            webbrowser.open('https://yst.am/movie/'+title.replace(" ","-").lower()+"-"+year) # searches yts.am as it wont work for tv and without force
-            logging.debug("Opening browser tab for %s " % ('https://yst.am/movie/'+title.replace(" ","-").lower()+"-"+year))
-            counter = counter + 1
-        
-        elif vpn:
-            webbrowser.open("https://eztv.io/search/"+title.replace(" ","-")+"-"+ep)  # searches eztv for series if vpn is connected
-            logging.debug("Opening browser tab for %s " % ("https://eztv.io/search/"+title.replace(" ","-")+"-"+ep))
-            counter = counter + 1
+                click.echo("Title: "+title)
+                click.echo("Year: "+year)
+                click.echo("PLOT:\n"+el.get('plot')[0])
+                choice = input("\nIs this it?(ENTER for yes/n for next)").lower()
+                if choice == 'n':
+                    click.clear()
+                    continue
+                break    
+            
+            if not tv:
+                webbrowser.open('https://yst.am/movie/'+title.replace(" ","-").lower()+"-"+year) # searches yts.am as it wont work for tv and without force
+                logging.debug("Opening browser tab for %s " % ('https://yst.am/movie/'+title.replace(" ","-").lower()+"-"+year))
+                counter = counter + 1
+            
+            elif vpn:
+                webbrowser.open("https://eztv.io/search/"+title.replace(" ","-")+"-"+ep)  # searches eztv for series if vpn is connected
+                logging.debug("Opening browser tab for %s " % ("https://eztv.io/search/"+title.replace(" ","-")+"-"+ep))
+                counter = counter + 1
+    except TypeError:
+        click.echo("No oject found:")        
     # vpn sites
     if vpn:  
         for url in vpns:   
