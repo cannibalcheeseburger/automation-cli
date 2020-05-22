@@ -36,6 +36,18 @@ I would recommend doing it in a virtual environment .
 pip install --editable .
 ```
 
+### Webdrivers
+
+You are also going to need webdrivers for selenium.
+
+Here i have included ChromeDriver v.83 .You can replace them with any other webdriver.
+
+<b>Important :</b> You need to change the path to webdrivers in `/automate/torrent.py` .
+
+For Linux: `/webdriver/lin`
+
+For Windows: `/webdriver/win`
+
 # Commands 
 
 ## Torrent
